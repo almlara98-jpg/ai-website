@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #fefeff 0%, #fafafa 100%);
+    min-height: 100vh;
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "aside main"
+        "footer footer";
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* الشريط العلوي */
+header {
+    grid-area: header;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #fefbfb;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.search-bar {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    max-width: 500px;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #f8f5f5;
+    border-radius: 30px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.search-bar input:focus {
+    border-color: #6b6bfa;
+    outline: none;
+    box-shadow: 0 0 20px rgba(94, 99, 250, 0.3);
+}
+
+.search-bar button {
+    padding: 12px 25px;
+    background: #fffefe;
+    color: rgb(7, 7, 7);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.search-bar button:hover {
+    background: #4343ff;
+    transform: scale(1.05);
+}
+
+.cart-icon a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #b7b3b3;
+    position: relative;
+}
+
+#cartCount {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #ff4757;
+    color: white;
+    font-size: 14px;
+    padding: 2px 8px;
+    border-radius: 40%;
+}
+
+/* القائمة الجانبية */
+aside {
+    grid-area: aside;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(176, 175, 175, 0.1);
+    height: fit-content;
+}
+
+.categories li {
+    list-style: none;
+    padding: 15px 20px;
+    margin: 5px 0;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 18px;
+}
+
+.categories li:hover {
+    background: #303031;
+    color: white;
+    transform: translateX(-10px);
+}
+
+/* المحتوى الرئيسي */
+main {
+    grid-area: main;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #fdfdfd 0%, #e7e5eb 100%);
+    color: rgb(7, 7, 7);
+    padding: 50px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-section h2 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.hero-section p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* شبكة المنتجات */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.product-card {
+    background: rgba(250, 250, 250, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(10, 10, 10, 0.2);
+}
+
+.product-image {
+    height: 250px;
+    background: linear-gradient(45deg, #fffefe, #fffbfb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.product-price {
+    font-size: 24px;
+    color: #06923c;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.product-description {
+    color: #000000;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.add-to-cart {
+    flex: 1;
+    padding: 12px;
+    background: #000000;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #048a40;
+    transform: scale(1.05);
+}
+
+.view-details {
+    padding: 12px 20px;
+    background: #030303;
+    color: #ffffff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.view-details:hover {
+    background: #7b7979;
+}
+
+/* الفوتر */
+footer {
+    grid-area: footer;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 50px 50px 0 0;
+    padding: 40px 30px 20px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #024dfd;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #ffffff;
+    color: #fffcfc;
+}
+/* تنسيق نص الوصف في الفوتر */
+.footer-section p {
+    color: #ff0000;  /* غير هذا اللون إلى ما تريد - هنا أحمر */
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* تنسيق أرقام الهاتف والبريد الإلكتروني */
+.footer-section p:contains("📞"),
+.footer-section p:contains("📧") {
+    color: #ffffff;  /* غير هذا اللون إلى ما تريد - هنا أخضر */
+}
+
+/* أو يمكنك تنسيق جميع الباراغرافات في الفوتر */
+.footer-section p {
+    color: #ffffff;  /* لون أزرق داكن */
+}
+
+/* animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* responsive */
+@media (max-width: 768px) {
+    body {
+        grid-template-areas: 
+            "header"
+            "aside"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-section h2 {
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sof store</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>
+                    <img src="IMG_20260123_041547_282.png" alt="" style="height: 90px; vertical-align: middle;">
+                </h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="ابحث عن منتج...">
+                <button onclick="searchProducts()"> بحث</button>
+            </div>
+            <div class="cart-icon">
+                <a href="cart.html">
+                    🛒 <span id="cartCount">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- القائمة الجانبية -->
+    <aside>
+        <ul class="categories">
+            <li onclick="filterProducts('all')">جميع المنتجات</li>
+            <li onclick="filterProducts('الكترونيات')">📱 إلكترونيات</li>
+            <li onclick="filterProducts('ملابس')">👕 ملابس</li>
+            <li onclick="filterProducts('منزل')">🏠 منزل</li>
+            <li onclick="filterProducts('رياضة')">⚽ رياضة</li>
+        </ul>
+    </aside>
+
+    <!-- عرض المنتجات -->
+    <main>
+        <div class="hero-section">
+            <h2>تسوق بأمان وجودة</h2>
+            <p>أفضل المنتجات بأفضل الأسعار</p>
+        </div>
+
+        <div class="products-grid" id="productsGrid">
+            <!-- المنتجات ستظهر هنا عبر JavaScript -->
+        </div>
+    </main>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>عن المتجر</h3>
+                <p>أفضل متجر إلكتروني لشراء المنتجات الأصلية</p>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">الشحن والتوصيل</a></li>
+                    <li><a href="#">طرق الدفع</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تواصل معنا</h3>
+                <p>📞 0941808018</p>
+                <p>📧 info@mystore.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>جميع الحقوق محفوظة &copy; 2026</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
